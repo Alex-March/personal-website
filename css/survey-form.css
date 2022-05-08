@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@500&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+  padding: 20px 100px 20px 100px;
+  text-align: left;
+	background: linear-gradient(-45deg, #d2e0f2, #F4C0FF);
+
+}
+
+form {
+  background: #FFF4C0;
+  padding: 20px 20px;
+/*   border-radius: 0.25rem; */
+  
+}
+
+/* .name {
+  padding: 100px 100px 100px 0px;
+}
+
+#email-label {
+  padding: 10px 0px 10px 0px;
+}
+
+#number-label {
+  padding: 10px 0px 10px 0px;
+} */
+
+
+input[type='number']{
+    width: 160px;
+} 
+
+#name-label:after {
+    content:" *";
+    color: red;
+  }
+
+#email-label:after {
+    content:" *";
+    color: red;
+  }
+
+footer:before {
+    content:"Note: * indicates required field";
+    color: red;
+    font-size: 14px;
+  }

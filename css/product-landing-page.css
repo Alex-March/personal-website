@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #FFF5EE;
+  padding: 50px;
+  
+  position: relative;
+
+}
+
+#nav-bar {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  background: #FAEBD7;
+}
+
+#selection {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: calc(100% / 3);
+  margin: 20px;
+  border: 2px solid grey;
+}
+
+.product > button {
+  margin: 15px 0;
+}
+
+
+
+#nav-bar img{
+  height: 50%;
+  padding: 10px;
+}    
+
+.nav-links{
+  display: flex;
+}
+
+.nav-links li{
+   width: 200px;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.contact-ways {
+  list-style: square;
+  background: white;
+}
+
+@media only screen and (max-width: 600px) {
+  #nav-bar {
+    width: 90%;
+    height: 40px;
+    justify-content: space-around;
+  }
+}
+
+.parent {
+display: flex;
+align-items: flex-start;
+flex-wrap: nowrap;
+height: 250px;
+}
+
+.child {
+width: 40%;
+}
+
+img {
+  width: 50%;
+  height: auto;
+}

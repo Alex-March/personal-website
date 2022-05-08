@@ -1,0 +1,152 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/* Color Codes: #61892F, 86C232, 222629, 474B4F, 6B6E70 */
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  background: #6B6E70;
+  color: white;
+  text-decoration: none;
+
+}
+
+
+#navbar {
+/*   list-style-type: none; */
+/*   margin: 0px; */
+/*   padding: 0; */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+/*     overflow: hidden; */
+/*   background-color: black; */
+
+
+}
+
+#navbar > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #222629;
+}
+
+#navbar > ul > li {
+  display: inline;
+  float: right;
+}
+
+#navbar > ul > li > a {
+  display: block;
+  padding: 14px 16px;
+  background-color: #222629;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+#navbar > ul > li a:hover:not(.active) {
+  background-color: black;
+}
+
+
+#welcome-section {
+  height:100vh;
+  text-align: center;
+  margin: 200px;
+  font-size: 25px;
+  
+}
+
+#projects {
+  height:50vh;
+  text-align: center;
+  padding: 200px;
+  font-size: 25px;
+}
+
+@media screen and (max-width: 720px) {
+  #navbar > ul > li {
+    display: inline;
+    float: none;
+    width: 100%;
+  }
+}
+
+.project-section {
+  text-align: center;
+/*   padding: 2000rem 2rem; */
+  background: #474B4F;
+/*       background: LightGray; */
+
+}
+
+.projects-grid {
+    font-size: 20px;
+    min-height: 300px;
+    width: 100%;
+    background: #6B6E70;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+/*     grid-gap: 10px; */
+/*     margin: 5px; */
+    color: white;
+    padding: 1rem 1rem 1rem 1rem;
+
+}
+
+.project-title {
+    color: white;
+}
+
+a:link { 
+  text-decoration: none; 
+  color: white;
+}
+a:visited { 
+  text-decoration: none;
+  color: white;
+}
+a:hover { 
+  text-decoration: none; 
+  color: white;
+}
+a:active { 
+  text-decoration: none; 
+  color: white;
+}
+
+
+
+
+
+.contact-me {
+  text-align: center;
+}
+
+.contact-grid {
+    font-size: 20px;
+    min-height: 30px;
+    width: 100%;
+    background: #6B6E70;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+/*     grid-template-rows: 1fr 1fr; */
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+
+footer {
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+}

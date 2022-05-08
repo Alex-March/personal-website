@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../css/survey-form.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+</head>
+<body>
+    <h1 id="title">Random survey on which items do you prefer</h1>
+<p id=description>This survey will let you type things in, select things, and check boxes! Yay! Much fun!</p>
+<form id="survey-form">
+  
+  <div class="form-group">
+  <label id="name-label" for="name">Name:</label><br>
+  <input type="text" id="name" name="name" placeholder="Please type in your name" required><br>
+    <br>
+
+    <div class="form-group">
+  <label id="email-label" for="email">Email:</label><br>
+  <input type="email" id="email" name="email" placeholder="Please type in your email" required><br>
+    <br>
+    
+  <div class="form-group">
+  <label id="number-label" for="age">Age:</label><br>
+  <input type="number" id="number" name="number" min="7" max="107" placeholder="Please type in your age"><br>
+    <br>
+
+  <div class="form-group">
+  <label for="dropdown">Which food do you prefer?<br><label>
+  <select name="items" id="dropdown">
+    <option value="cheese">Cheese</option>
+    <option value="ham">Ham</option>
+    <option value="tomato">Tomato</option>
+    <option value="bread">Bread</option>
+  </select><br>
+  
+  <div class="form-group">
+  <p>Please select which of these languages do you prefer</p>
+  <input type="radio" id="english" name="language" value="English">
+  <label for="english">English</label><br>
+  <input type="radio" id="french" name="language" value="French">
+  <label for="french">French</label><br>
+  <input type="radio" id="spanish" name="language" value="Spanish">
+  <label for="spanish">Spanish</label><br>
+  
+  <div class="form-group">
+  <p>Which of these items do you like? (check all that apply)</p>
+  <input type="checkbox" value="water" name="water">
+  <label for="water">Water</label>
+  <br>
+  <input type="checkbox" value="fire" name="fire">
+  <label for="fire">Fire</label>
+  <br>
+  <input type="checkbox" value="earth" name="earth" placeholder="Please type in your name">
+  <label for="earth">Earth</label>
+  <br>
+
+  <div class="form-group">
+    <p>Please leave any additional comments or suggestions here</p>
+    <textarea id="add-comm" name="add-comm" placeholder="Feel free to type out your comments here!" rows="4" cols="50"></textarea>
+  <br>
+    
+  <div class="form-group">
+  <button type="submit" id="submit" class="submit-button">Submit</button>
+  
+    
+   <footer></footer>
+</form>
+
+</body>
+</html>

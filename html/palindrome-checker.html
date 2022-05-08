@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome checker</title>
+    <!-- <script type="module" src="../js/palindrome-checker.js"></script> -->
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <p>Return true if the given string is a palindrome. Otherwise, return false. <br><br>
+
+        A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.
+        
+        Note: You'll need to remove all non-alphanumeric characters (punctuation, spaces and symbols) and turn everything into the same case (lower or upper case) in order to check for palindromes.</p>
+
+
+        <h3>Palindrome text input</h3>
+        <input type="text" id="userinput" placeholder="Enter Text you would like to convert">
+        <button onclick="palindrome()" id="btn">Enter</button>
+        
+
+<script>
+
+
+
+function palindrome() {
+  let str = document.getElementById("userinput").value
+
+
+
+  let forwards = [];
+  let backwards = [];
+  let splitStr = str
+    .toLowerCase()
+    .replace(/[^a-zA-Z0-9]/g, "")
+    .split("")
+
+  for (let i = 0; i < splitStr.length; i++) {
+    forwards.push(splitStr[i]);
+  }
+
+  for (let i = 0; i < splitStr.length; i++) {
+    backwards.unshift(splitStr[i]);
+  }
+
+  let fStr = forwards.join('');
+  let bStr = backwards.join('');
+
+  if (fStr === bStr) {
+    document.write(true + " the string is a palindrome");;
+  } else {
+    document.write(false + " the string is NOT a palindrome");;
+  }
+
+
+}
+
+
+
+
+
+        </script>
+</body>
+</html>
