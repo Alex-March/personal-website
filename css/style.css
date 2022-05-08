@@ -17,6 +17,8 @@ body {
 }
 
 
+
+
 #navbar {
 /*   list-style-type: none; */
 /*   margin: 0px; */
@@ -59,11 +61,16 @@ body {
 
 
 #welcome-section {
-  height:100vh;
+  height:80vh;
   text-align: center;
   margin: 200px;
   font-size: 25px;
   
+}
+
+#welcome-section > img {
+  width: 320px;
+  height: auto
 }
 
 #projects {
