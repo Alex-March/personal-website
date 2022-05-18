@@ -4,53 +4,143 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script type="module" src="../js/caesars-cipher.js"></script>
-    <link rel="stylesheet" href="../css/style.css">
-
+    <title>Caesar's cipher decoder</title>
 </head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter&display=swap');
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    color: rgb(75, 75, 75);
+    background-color:rgb(230, 230, 230);
+}
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    color: black;
+    margin-bottom: 10%;
+    font-size: 40px;
+  }
+
+  h2 {
+    padding-bottom: 5%;
+    font-size: 22px;
+  }
+
+  input {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+
+    width: 60%;
+    /* background-color: #4CAF50; */
+    /* color: white; */
+    padding: 14px 20px;
+    /* margin: 8px 0; */
+    border: none;
+    border-radius: 10px;
+    /* cursor: pointer; */
+  }
+
+  .all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(284, 33%, 80%);
+    border-radius: 5%;
+    padding: 10%;
+    margin-top: 15vh;
+    font-size: 16px;
+    width: 70%;
+    max-width: 1000px;
+  }
+
+  .func {
+    text-align: center;
+    width: 90%
+  }
+
+  .input-field {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+  justify-content: center;
+  width: 100%;
+  margin:auto;
+  }
+
+  button {
+    background-color: hwb(271 7% 41%);
+    color: white;
+    border-radius: 10px;
+    padding: 12px 24px 12px 24px;
+    font-size: 16px;
+    border: none;
+    font-weight: bold;
+  }
+
+  #output {
+    margin-top: 50px;
+  }
+</style>
+
 <body>
-    <p>One of the simplest and most widely known ciphers is a Caesar cipher, also known as a shift cipher. In a shift cipher the meanings of the letters are shifted by some set amount.
+    <div class="all">
+      <h1>ROT13 Cipher Encoder/Decoder</h1>
+      <p>One of the simplest and most widely known ciphers is a Caesar cipher, also known as a shift cipher. In a shift cipher the meanings of the letters are shifted by some set amount. A common modern use is the ROT13 cipher, where the values of the letters are shifted by 13 places. Thus A ↔ N, B ↔ O and so on.</p>
+      <br>
+      <div class="func">    
+        <h2>ROT13 cipher input:</h2>
+        <p><strong>example:</strong> GBQNL VF N TBBQ QNL<br><strong>should result in: </strong>TODAY IS A GOOD DAY</p>
+        <div class="input-field">
+          <input type="text" placeholder="Enter text to encode/decode" name="a" id="a">
+          <button onclick="rot13(document.getElementById('a').value)">Enter</button>
+        </div>
+  
+      </div>
 
-        A common modern use is the ROT13 cipher, where the values of the letters are shifted by 13 places. Thus A ↔ N, B ↔ O and so on.
-        
-        Write a function which takes a ROT13 encoded string as input and returns a decoded string.
-        
-        All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.</p>
 
-
-        <h3>Caesar cipher Input</h3>
-        <input type="text" id="userinput" placeholder="Enter Text you would like to convert">
-        <button onclick="rot13()" id="btn">Enter</button>
-        
-
-<script>
-
-function rot13() {
-  let str = document.getElementById("userinput").value
-  str = str.toUpperCase();
+      <p id="output"> </p>
+      <p id="outputTwo"> </p>
+    </div>
+</body>
+</html>
+    <script>
+// const num = document.getElementsByTagName("input");
+function rot13(str) {
+  const strUpper = str.toUpperCase();
+  console.log("string value: ", str)
   let newArr = [];
 
-  for (let i = 0; i < str.length; i++) {
+  for (let i = 0; i < strUpper.length; i++) {
 
 // for letters A-M, shift down 13
-    if (str.charCodeAt([i]) >= 65 && str.charCodeAt([i]) <= 77) {
-      newArr.push(String.fromCharCode(str.charCodeAt([i]) + 13));
+    if (strUpper.charCodeAt([i]) >= 65 && strUpper.charCodeAt([i]) <= 77) {
+      newArr.push(String.fromCharCode(strUpper.charCodeAt([i]) + 13));
     } 
 // for letters N-Z, shift up 13
-    else if (str.charCodeAt([i]) >= 78 && str.charCodeAt([i]) <= 90) {
-      newArr.push(String.fromCharCode(str.charCodeAt([i]) - 13));
+    else if (str.charCodeAt([i]) >= 78 && strUpper.charCodeAt([i]) <= 90) {
+      newArr.push(String.fromCharCode(strUpper.charCodeAt([i]) - 13));
     } 
 // for chars other than A-Z, pass the values through
     else {
-      newArr.push(str[i]);
+      newArr.push(strUpper[i]);
     }
   }
 // convert array to string
-  
-document.write(str + " in Caesar cipher is: " + newArr.join(""));
+
+
+  let result = newArr.join("");
+  outputTwo.style.fontSize = "30px";
+  // output.style.marginBottom = "-0px";
+  outputTwo.style.paddingTop = "1px";
+
+  document.getElementById("output").innerHTML = strUpper + " encoded/decoded to ROT13 is:";
+  document.getElementById("outputTwo").innerHTML = result.bold();
 }
 
-        </script>
-</body>
-</html>
+
+    
+</script>
