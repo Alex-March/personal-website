@@ -35,13 +35,9 @@
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     width: 60%;
-    /* background-color: #4CAF50; */
-    /* color: white; */
     padding: 14px 20px;
-    /* margin: 8px 0; */
     border: none;
     border-radius: 10px;
-    /* cursor: pointer; */
   }
 
   .all {
@@ -104,7 +100,6 @@
       <br>
       <div class="func">    
         <h2>Telephone number input:</h2>
-        <!-- <p><strong>example:</strong> 416-456-5678<br><strong>should result in: </strong>valid phone number</p> -->
         <div class="input-field">
           <input type="text" placeholder="Enter text to encode/decode" name="a" id="a">
           <button onclick="telephoneCheck(document.getElementById('a').value)">Enter</button>
@@ -124,8 +119,6 @@ function telephoneCheck(str) {
   // hopefully this never needs to be troubleshooted :(
   let regex = /^(\d{10})$|^(\d{3}-\d{3}-\d{4})$|^(\d\s\d{3}-\d{3}-\d{4})$|^(1\s\(\d{3}\)-\d{3}-\d{4})$|^(1\s\(\d{3}\)\s\d{3}-\d{4})$|^(\(\d{3}\)\d{3}-\d{4})$|^(1\(\d{3}\)\d{3}-\d{4})$|^(\d\s\d{3}\s\d{3}\s\d{4})$|^(\+1\s\d{3}\s\d{3}\s\d{4})$|^(\+1-\d{3}-\d{3}-\d{4})$/g;
 
-//   let result = regex.test(str);
-
   if (regex.test(str)) {
     document.getElementById("output").innerHTML = " &#9989; valid phone number";
     // document.getElementById("outputTwo").innerHTML = result.bold();
@@ -138,48 +131,8 @@ function telephoneCheck(str) {
   outputTwo.style.fontSize = "30px";
   // output.style.marginBottom = "-0px";
   outputTwo.style.paddingTop = "1px";
-
-//   document.getElementById("output").innerHTML = strUpper + " encoded/decoded to ROT13 is:";
-//   document.getElementById("outputTwo").innerHTML = result.bold();
 }
 
 
 
-
-// ///////////////////////////////////////////////////////////////////////
-// // const num = document.getElementsByTagName("input");
-// function rot13(str) {
-//   const strUpper = str.toUpperCase();
-//   console.log("string value: ", str)
-//   let newArr = [];
-
-//   for (let i = 0; i < strUpper.length; i++) {
-
-// // for letters A-M, shift down 13
-//     if (strUpper.charCodeAt([i]) >= 65 && strUpper.charCodeAt([i]) <= 77) {
-//       newArr.push(String.fromCharCode(strUpper.charCodeAt([i]) + 13));
-//     } 
-// // for letters N-Z, shift up 13
-//     else if (str.charCodeAt([i]) >= 78 && strUpper.charCodeAt([i]) <= 90) {
-//       newArr.push(String.fromCharCode(strUpper.charCodeAt([i]) - 13));
-//     } 
-// // for chars other than A-Z, pass the values through
-//     else {
-//       newArr.push(strUpper[i]);
-//     }
-//   }
-// // convert array to string
-
-
-//   let result = newArr.join("");
-//   outputTwo.style.fontSize = "30px";
-//   // output.style.marginBottom = "-0px";
-//   outputTwo.style.paddingTop = "1px";
-
-//   document.getElementById("output").innerHTML = strUpper + " encoded/decoded to ROT13 is:";
-//   document.getElementById("outputTwo").innerHTML = result.bold();
-// }
-
-
-    
 </script>

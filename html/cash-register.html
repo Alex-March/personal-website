@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cash Register</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter&display=swap");
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: "Inter", sans-serif;
+      color: rgb(75, 75, 75);
+      background-color: rgb(230, 230, 230);
+    }
+    h1 {
+      font-family: "DM Serif Display", serif;
+      color: black;
+      margin-bottom: 5%;
+      font-size: 40px;
+      text-align: center;
+    }
+
+    h2 {
+      padding-top: 3%;
+      padding-bottom: 3%;
+      font-size: 22px;
+    }
+
+    input {
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      width: 60%;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .all {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: hsl(284, 33%, 80%);
+      border-radius: 5%;
+      padding: clamp(60px, 5%, 120px) clamp(60px, 5%, 120px)
+        clamp(30px, 3%, 100px) clamp(60px, 5%, 120px);
+      margin-top: 15vh;
+      font-size: 16px;
+      width: 70%;
+      max-width: 1000px;
+    }
+
+    .func {
+      text-align: center;
+      width: 100%;
+    }
+
+    .input-field {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      margin: auto;
+    }
+
+    button {
+      background-color: hwb(271 7% 41%);
+      color: white;
+      border-radius: 10px;
+      padding: 12px 24px 12px 24px;
+      font-size: 16px;
+      border: none;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: hwb(271 5% 63%);
+    }
+
+    #output {
+      margin-top: 20px;
+    }
+
+    .explanation {
+      width: 100%;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    #result-section {
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+
+  <body>
+    <div class="all">
+      <h1>Cash Register</h1>
+      <p class="explanation">
+        This is a cash register drawer calculator, where you input the price of
+        an item and the amount of cash that is given by the customer, and this
+        page calculates how much change to give in change in what denomination.
+      </p>
+      <br />
+      <div class="func">
+        <h2>Cash register inputs:</h2>
+        <div class="input-field">
+          <div class="row price-cash">
+            <div class="col-md-1">
+              <label for="price" class="col-form-label-lg">Price:</label>
+            </div>
+            <div class="col-md-5">
+              <input type="text" id="price" name="price" /><br />
+            </div>
+            <div class="col-md-1">
+              <label for="cash" class="col-form-label-lg">Cash:</label>
+            </div>
+            <div class="col-md-5">
+              <input type="text" id="cash" name="cash" /><br />
+            </div>
+            <h2>Cash in drawer:</h2>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-1">
+                  <label for="penny" class="col-form-label">Penny:</label>
+                </div>
+                <div class="col-md-3">
+                  <input type="text" placeholder="" id="penny" />
+                </div>
+                <div class="col-md-1">
+                  <label for="nickel" class="col-form-label">Nickel:</label>
+                </div>
+                <div class="col-md-3">
+                  <input type="text" placeholder="" id="nickel" />
+                </div>
+                <div class="col-md-1">
+                  <label for="dime" class="col-form-label">Dime:</label>
+                </div>
+                <div class="col-md-3">
+                  <input type="text" placeholder="" id="dime" />
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-md-1">
+                  <label for="quarter" class="col-form-label">Quarter:</label>
+                </div>
+                <div class="col-md-3">
+                  <input type="text" placeholder="" id="quarter" />
+                </div>
+                <div class="col-md-1">
+                  <label for="one" class="col-form-label">One:</label>
+                </div>
+                <div class="col-md-3">
+                  <input type="text" placeholder="" id="one" />
+                </div>
+                <div class="col-md-1">
+                  <label for="five" class="col-form-label">Five:</label>
+                </div>
+                <div class="col-md-3">
+                  <input type="text" placeholder="" id="five" />
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-md-1">
+                  <label for="ten" class="col-form-label">Ten:</label>
+                </div>
+                <div class="col-md-3">
+                  <input type="text" placeholder="" id="ten" />
+                </div>
+                <div class="col-md-1">
+                  <label for="twenty" class="col-form-label">Twenty:</label>
+                </div>
+                <div class="col-md-3">
+                  <input type="text" placeholder="" id="twenty" />
+                </div>
+                <div class="col-md-1">
+                  <label for="one-hundred" class="col-form-label">Hundred:</label>
+                </div>
+                <div class="col-md-3">
+                  <input type="text" placeholder="" id="one-hundred" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br /><br /><br />
+          <button onclick="checkCashRegister()">Enter</button>
+        </div>
+      </div>
+
+      <div id="result-section"></div>
+      <p id="output"></p>
+      <p id="outputTwo"></p>
+    </div>
+
+
+
+
+  </body>
+</html>
+
+<script>
+
+  function checkCashRegister() {
+    const price = document.getElementById("price").value;
+    const cash = document.getElementById("cash").value;
+    const pennyAmount = document.getElementById("penny").value;
+    const nickelAmount = document.getElementById("nickel").value;
+    const dimeAmount = document.getElementById("dime").value;
+    const quarterAmount = document.getElementById("quarter").value;
+    const oneAmount = document.getElementById("one").value;
+    const fiveAmount = document.getElementById("five").value;
+    const tenAmount = document.getElementById("ten").value;
+    const twentyAmount = document.getElementById("twenty").value;
+    const oneHundredAmount = document.getElementById("one-hundred").value;
+
+    const pennyArray = ["PENNY", pennyAmount === "" ? 0 : pennyAmount];
+    const nickelArray = ["NICKEL", nickelAmount === "" ? 0 : nickelAmount];
+    const dimeArray = ["DIME", dimeAmount === "" ? 0 : dimeAmount];
+    const quarterArray = ["QUARTER", quarterAmount === "" ? 0 : quarterAmount];
+    const oneArray = ["ONE", oneAmount === "" ? 0 : oneAmount];
+    const fiveArray = ["FIVE", fiveAmount === "" ? 0 : fiveAmount];
+    const tenArray = ["TEN", tenAmount === "" ? 0 : tenAmount];
+    const twentyArray = ["TWENTY", twentyAmount === "" ? 0 : twentyAmount];
+    const oneHundredArray = ["ONE HUNDRED", oneHundredAmount === "" ? 0 : oneHundredAmount];
+
+    const cid = [
+      pennyArray,
+      nickelArray,
+      dimeArray,
+      quarterArray,
+      oneArray,
+      fiveArray,
+      tenArray,
+      twentyArray,
+      oneHundredArray,
+    ];
+    console.log("value of c: ", cid);
+    console.log(
+      "price: ",
+      price,
+      " cash: ",
+      cash,
+      " cid ",
+      cid,
+      " is cid array: ",
+      typeof cid,
+      " cid length ",
+      cid.length
+    );
+    let cashRegister = {};
+    let changeNeeded = cash - price;
+    console.log(changeNeeded);
+    let denominations = [
+      { name: "PENNY", value: 0.01 },
+      { name: "NICKEL", value: 0.05 },
+      { name: "DIME", value: 0.1 },
+      { name: "QUARTER", value: 0.25 },
+      { name: "ONE", value: 1 },
+      { name: "FIVE", value: 5 },
+      { name: "TEN", value: 10 },
+      { name: "TWENTY", value: 20 },
+      { name: "ONE HUNDRED", value: 100 },
+    ];
+
+    cashRegister.change = [];
+
+    // remove the available change to be given for denominations that are greater than the change needed to be given
+    for (let i = 0; i < cid.length; i++) {
+      if (denominations[i] > cash - price) {
+        cid[i][1] = 0;
+      }
+    }
+
+    const newCid = cid;
+
+    // sum up all eligible change that can be given
+    let inputOne = newCid.reduce((a, b) => a + b[1], 0);
+    let sumOfAllChange =
+      Math.round(newCid.reduce((a, b) => a + b[1], 0) * 100) / 100;
+
+    // Return {status: "CLOSED", change: [...]} with cash-in-drawer as the value for the key change if it is equal to the change due.
+    if (changeNeeded === sumOfAllChange) {
+      cashRegister.status = "CLOSED";
+      cashRegister.change = newCid;
+
+      document.getElementById("output").innerHTML =
+      "cash register status: <strong>" + cashRegister.status + "</strong>";
+
+      document.getElementById("result-section").innerHTML +=
+        "<br>" + "No more cash in till after this customer the change" + "<br><br>";
+    }
+
+    //  Return {status: "INSUFFICIENT_FUNDS", change: []} if cash-in-drawer is less than the change due, or if you cannot return the exact change.
+    else if (changeNeeded > sumOfAllChange) {
+      cashRegister.status = "INSUFFICIENT_FUNDS";
+      cashRegister.change = [];
+
+      document.getElementById("output").innerHTML =
+      "cash register status: <strong>" + cashRegister.status + "</strong>"; //.stringify(cashRegister, null, 2);
+      document.getElementById("result-section").innerHTML +=
+        "<br>" + "Not enough cash in till to give change to the customer" + "<br><br>";
+    }
+
+    // Otherwise, return {status: "OPEN", change: [...]}, with the change due in coins and bills, sorted in highest to lowest order, as the value of the change key.
+    else {
+      cashRegister.status = "OPEN";
+      let subCid = newCid.map((a) => a[1]);
+      for (let i = subCid.length - 1; i >= 0; i--) {
+        changeNeeded = Math.round(changeNeeded * 100) / 100;
+        if (
+          changeNeeded > subCid[i] &&
+          denominations[i]["value"] < changeNeeded
+        ) {
+          changeNeeded = changeNeeded - subCid[i]; //( % denominations[i]['value'])
+          cashRegister.change.push([newCid[i][0], Number(subCid[i])]);
+        } else if (changeNeeded > denominations[i]["value"] && subCid[i] > 0) {
+          let amountNotMax =
+            Math.floor(changeNeeded / denominations[i]["value"]) *
+            denominations[i]["value"];
+          cashRegister.change.push([newCid[i][0], amountNotMax]);
+          changeNeeded = changeNeeded - amountNotMax;
+        }
+      }
+      console.log(cashRegister, "nay nay nay");
+      document.getElementById("result-section").innerHTML =
+        "<br>" +
+        "Cash register status: " +
+        "<strong>" +
+        cashRegister.status +
+        "</strong>";
+
+      document.getElementById("result-section").innerHTML +=
+        "<br>" + "Change to be given to the customer:" + "<br><br>";
+
+      for (i = 0; i < cashRegister.change.length; i++) {
+        if (cashRegister.change[i][1] > 0) {
+          document.getElementById("result-section").innerHTML +=
+            "<strong>" +
+            cashRegister.change[i][0] +
+            ": " +
+            "</strong>" +
+            cashRegister.change[i][1] +
+            "<br>";
+        }
+      }
+
+      return cashRegister;
+    }
+    return cashRegister;
+  }
+</script>
