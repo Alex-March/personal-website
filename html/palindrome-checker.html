@@ -1,67 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Palindrome checker</title>
-    <!-- <script type="module" src="../js/palindrome-checker.js"></script> -->
-    <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter&display=swap");
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: "Inter", sans-serif;
+      color: rgb(75, 75, 75);
+      background-color: rgb(230, 230, 230);
+    }
+    h1 {
+      font-family: "DM Serif Display", serif;
+      color: black;
+      margin-bottom: 5%;
+      font-size: 40px;
+      text-align: center;
+    }
 
-</head>
-<body>
-    <p>Return true if the given string is a palindrome. Otherwise, return false. <br><br>
+    h2 {
+      padding-top: 3%;
+      padding-bottom: 3%;
+      font-size: 22px;
+    }
 
-        A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.
-        
-        Note: You'll need to remove all non-alphanumeric characters (punctuation, spaces and symbols) and turn everything into the same case (lower or upper case) in order to check for palindromes.</p>
+    input {
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      width: 60%;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 10px;
+    }
 
+    .all {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: hsl(284, 33%, 80%);
+      border-radius: 5%;
+      padding: clamp(60px, 5%, 120px) clamp(60px, 5%, 120px)
+        clamp(60px, 5%, 120px) clamp(60px, 5%, 120px);
+      margin-top: 15vh;
+      font-size: 16px;
+      width: 70%;
+      max-width: 600px;
+    }
 
-        <h3>Palindrome text input</h3>
-        <input type="text" id="userinput" placeholder="Enter Text you would like to convert">
-        <button onclick="palindrome()" id="btn">Enter</button>
-        
+    .func {
+      text-align: center;
+      width: 100%;
+    }
 
-<script>
+    .input-field {
+      display: flex;
+      flex-direction: row;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: auto;
+    }
 
+    button {
+      background-color: hwb(271 7% 41%);
+      color: white;
+      border-radius: 10px;
+      padding: 12px 24px 12px 24px;
+      font-size: 16px;
+      border: none;
+      font-weight: bold;
+    }
 
+    button:hover {
+      background-color: hwb(271 5% 63%);
+    }
 
-function palindrome() {
-  let str = document.getElementById("userinput").value
+    #output {
+      margin-top: 50px;
+    }
 
+    .explanation {
+      width: 100%;
+      max-width: 800px;
+      text-align: center;
+    }
+  </style>
 
+  <body>
+    <div class="all">
+      <h1>Palindrome checker</h1>
+      <p class="explanation">
+        A palindrome is a word or sentence that's spelled the same way both
+        forward and backward, ignoring punctuation, case, and spacing. This app
+        checks whether a word is a palindrome or not.
+      </p>
+      
+      <br />
+      <p><strong>example:</strong> the word "race car" is a palindrome <br>
+      <div class="func">
+        <h2>Input the word to check:</h2>
+        <div class="input-field">
+          <input
+            type="text"
+            placeholder="Enter text to check"
+            name="a"
+            id="a"
+          />
+          <button onclick="palindrome(document.getElementById('a').value)">
+            Enter
+          </button>
+        </div>
+      </div>
 
-  let forwards = [];
-  let backwards = [];
-  let splitStr = str
-    .toLowerCase()
-    .replace(/[^a-zA-Z0-9]/g, "")
-    .split("")
-
-  for (let i = 0; i < splitStr.length; i++) {
-    forwards.push(splitStr[i]);
-  }
-
-  for (let i = 0; i < splitStr.length; i++) {
-    backwards.unshift(splitStr[i]);
-  }
-
-  let fStr = forwards.join('');
-  let bStr = backwards.join('');
-
-  if (fStr === bStr) {
-    document.write(true + " the string is a palindrome");;
-  } else {
-    document.write(false + " the string is NOT a palindrome");;
-  }
-
-
-}
-
-
-
-
-
-        </script>
-</body>
+      <p id="output"></p>
+      <p id="outputTwo"></p>
+    </div>
+  </body>
 </html>
+<script>
+  function palindrome(str) {
+    // let str = document.getElementById("userinput").value
+
+    let forwards = [];
+    let backwards = [];
+    let splitStr = str
+      .toLowerCase()
+      .replace(/[^a-zA-Z0-9]/g, "")
+      .split("");
+
+    for (let i = 0; i < splitStr.length; i++) {
+      forwards.push(splitStr[i]);
+    }
+
+    for (let i = 0; i < splitStr.length; i++) {
+      backwards.unshift(splitStr[i]);
+    }
+
+    let fStr = forwards.join("");
+    let bStr = backwards.join("");
+
+    if (fStr === bStr) {
+      document.getElementById("output").innerHTML =
+        " &#9989; this is a palindrome";
+    } else {
+      document.getElementById("output").innerHTML =
+        " &#10060; this is not a palindrome";
+    }
+
+
+    outputTwo.style.fontSize = "30px";
+    // output.style.marginBottom = "-0px";
+    outputTwo.style.paddingTop = "1px";
+  }
+</script>
