@@ -1,291 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="icon" type="image/png" href="../img/logo.PNG" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter&display=swap');
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Inter', sans-serif;
-    color: rgb(75, 75, 75);
-    background-color:rgb(230, 230, 230);
-}
-  h1 {
-    font-family: 'DM Serif Display', serif;
-    color: black;
-    margin-bottom: 10%;
-    font-size: 40px;
-  }
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter&display=swap");
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: "Inter", sans-serif;
+      color: rgb(75, 75, 75);
+      background-color: rgb(230, 230, 230);
+    }
+    h1 {
+      font-family: "DM Serif Display", serif;
+      color: black;
+      margin-bottom: 10%;
+      font-size: 40px;
+    }
 
-  h2 {
-    padding-bottom: 5%;
-    font-size: 22px;
-  }
+    h2 {
+      padding-bottom: 5%;
+      font-size: 22px;
+    }
 
-  input {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    input {
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
 
-    width: 60%;
-    /* background-color: #4CAF50; */
-    /* color: white; */
-    padding: 14px 20px;
-    /* margin: 8px 0; */
-    border: none;
-    border-radius: 10px;
-    /* cursor: pointer; */
-  }
+      width: 60%;
+      /* background-color: #4CAF50; */
+      /* color: white; */
+      padding: 14px 20px;
+      /* margin: 8px 0; */
+      border: none;
+      border-radius: 10px;
+      /* cursor: pointer; */
+    }
 
-  .all {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: hsl(284, 33%, 80%);
-    border-radius: 5%;
-    padding: 10%;
-    margin-top: 15vh;
-    font-size: 16px;
-  }
-  .input-field {
-    display: flex;
-    flex-direction: row;
-  }
+    .all {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: hsl(284, 33%, 80%);
+      border-radius: 5%;
+      padding: 10%;
+      margin-top: 15vh;
+      font-size: 16px;
+    }
+    .input-field {
+      display: flex;
+      flex-direction: row;
+    }
 
-  button {
-    background-color: hwb(271 7% 41%);
-    color: white;
-    border-radius: 10px;
-    padding: 12px 24px 12px 24px;
-    font-size: 16px;
-    border: none;
-    font-weight: bold;
-  }
+    button {
+      background-color: hwb(271 7% 41%);
+      color: white;
+      border-radius: 10px;
+      padding: 12px 24px 12px 24px;
+      font-size: 16px;
+      border: none;
+      font-weight: bold;
+    }
 
-  #output {
-    margin-top: 50px;
-  }
-</style>
+    #output {
+      margin-top: 50px;
+    }
+  </style>
 
-<body>
+  <body>
     <div class="all">
       <h1>Roman Numeral Converter</h1>
-      <br>
+      <br />
       <h2>Roman Numeral Input:</h2>
       <div class="input-field">
-        <input type="text" placeholder="Enter number to convert" name="a" id="a" inputmode="numeric">
+        <input
+          type="text"
+          placeholder="Enter number to convert"
+          name="a"
+          id="a"
+          inputmode="numeric"
+        />
         <button onclick="convertToRoman(document.getElementById('a').value)">Enter</button>
       </div>
 
-
-      <p id="output"> </p>
-      <p id="outputTwo"> </p>
+      <p id="output"></p>
+      <p id="outputTwo"></p>
     </div>
 
     <script>
-// const num = document.getElementsByTagName("input");
+      // const num = document.getElementsByTagName("input");
 
+      function convertToRoman(num) {
+        let finalArray = {};
 
+        let strNum = num.toString();
+        if (strNum % 1 !== 0 || strNum < 1 || strNum > 4999 || isNaN(strNum) === true) {
+          return alert("Please enter a valid number between 1-4999");
+        }
+        // Four digit handling
+        // function fourDig() {
+        (() => {
+          if (strNum.length == 4) {
+            switch (strNum[0]) {
+              case "0":
+                finalArray.thousands = "";
+                strNum = strNum.slice(1);
+                break;
+              case "1":
+                finalArray.thousands = "M";
+                strNum = strNum.slice(1);
+                break;
+              case "2":
+                finalArray.thousands = "MM";
+                strNum = strNum.slice(1);
+                break;
+              case "3":
+                finalArray.thousands = "MMM";
+                strNum = strNum.slice(1);
+                break;
+              case "4":
+                finalArray.thousands = "MMMM";
+                strNum = strNum.slice(1);
+                break;
+            }
+          }
+        })();
 
-function convertToRoman(num) {
-  let finalArray = {};
+        // Three digit handling
+        (() => {
+          if (strNum.length == 3) {
+            switch (strNum[0]) {
+              case "0":
+                finalArray.hundreds = "";
+                strNum = strNum.slice(1);
+                break;
+              case "1":
+                finalArray.hundreds = "C";
+                strNum = strNum.slice(1);
+                break;
+              case "2":
+                finalArray.hundreds = "CC";
+                strNum = strNum.slice(1);
+                break;
+              case "3":
+                finalArray.hundreds = "CCC";
+                strNum = strNum.slice(1);
+                break;
+              case "4":
+                finalArray.hundreds = "CD";
+                strNum = strNum.slice(1);
+                break;
+              case "5":
+                finalArray.hundreds = "D";
+                strNum = strNum.slice(1);
+                break;
+              case "6":
+                finalArray.hundreds = "DC";
+                strNum = strNum.slice(1);
+                break;
+              case "7":
+                finalArray.hundreds = "DCC";
+                strNum = strNum.slice(1);
+                break;
+              case "8":
+                finalArray.hundreds = "DCCC";
+                strNum = strNum.slice(1);
+                break;
+              case "9":
+                finalArray.hundreds = "CM";
+                strNum = strNum.slice(1);
+                break;
+            }
+          }
+        })();
 
-  let strNum = num.toString();
-  if (strNum % 1 !== 0 || strNum < 1 || strNum > 4999 || isNaN(strNum) === true) {
-    return alert("Please enter a valid number between 1-4999");
-  }
-  // Four digit handling
-  // function fourDig() {
-  (() => {
-    if (strNum.length == 4) {
-      switch (strNum[0]) {
-        case "0":
-          finalArray.thousands = "";
-          strNum = strNum.slice(1);
-          break;
-        case "1":
-          finalArray.thousands = "M";
-          strNum = strNum.slice(1);
-          break;
-        case "2":
-          finalArray.thousands = "MM";
-          strNum = strNum.slice(1);
-          break;
-        case "3":
-          finalArray.thousands = "MMM";
-          strNum = strNum.slice(1);
-          break;
-        case "4":
-          finalArray.thousands = "MMMM";
-          strNum = strNum.slice(1);
-          break;
+        // Two digit handling
+        (() => {
+          if (strNum.length == 2) {
+            switch (strNum[0]) {
+              case "0":
+                finalArray.tens = "";
+                strNum = strNum.slice(1);
+                break;
+              case "1":
+                finalArray.tens = "X";
+                strNum = strNum.slice(1);
+                break;
+              case "2":
+                finalArray.tens = "XX";
+                strNum = strNum.slice(1);
+                break;
+              case "3":
+                finalArray.tens = "XXX";
+                strNum = strNum.slice(1);
+                break;
+              case "4":
+                finalArray.tens = "XL";
+                strNum = strNum.slice(1);
+                break;
+              case "5":
+                finalArray.tens = "L";
+                strNum = strNum.slice(1);
+                break;
+              case "6":
+                finalArray.tens = "LX";
+                strNum = strNum.slice(1);
+                break;
+              case "7":
+                finalArray.tens = "LXX";
+                strNum = strNum.slice(1);
+                break;
+              case "8":
+                finalArray.tens = "LXXX";
+                strNum = strNum.slice(1);
+                break;
+              case "9":
+                finalArray.tens = "XC";
+                strNum = strNum.slice(1);
+                break;
+            }
+          }
+        })();
+
+        // One digit handling
+        (() => {
+          if (strNum.length == 1) {
+            switch (strNum[0]) {
+              case "0":
+                finalArray.ones = "";
+                strNum = strNum.slice(1);
+                break;
+              case "1":
+                finalArray.ones = "I";
+                strNum = strNum.slice(1);
+                break;
+              case "2":
+                finalArray.ones = "II";
+                strNum = strNum.slice(1);
+                break;
+              case "3":
+                finalArray.ones = "III";
+                strNum = strNum.slice(1);
+                break;
+              case "4":
+                finalArray.ones = "IV";
+                strNum = strNum.slice(1);
+                break;
+              case "5":
+                finalArray.ones = "V";
+                strNum = strNum.slice(1);
+                break;
+              case "6":
+                finalArray.ones = "VI";
+                strNum = strNum.slice(1);
+                break;
+              case "7":
+                finalArray.ones = "VII";
+                strNum = strNum.slice(1);
+                break;
+              case "8":
+                finalArray.ones = "VIII";
+                strNum = strNum.slice(1);
+                break;
+              case "9":
+                finalArray.ones = "IX";
+                strNum = strNum.slice(1);
+                break;
+            }
+          }
+        })();
+
+        // combining all key values and returning final string:
+        //   return Object.values(finalArray).join("");
+        let result = Object.values(finalArray).join("");
+        outputTwo.style.fontSize = "30px";
+        // output.style.marginBottom = "-0px";
+        outputTwo.style.paddingTop = "1px";
+
+        document.getElementById("output").innerHTML = num + " converted to Roman numeral is:";
+        document.getElementById("outputTwo").innerHTML = result.bold();
       }
-    }
-  })();
-
-  // Three digit handling
-  (() => {
-    if (strNum.length == 3) {
-      switch (strNum[0]) {
-        case "0":
-          finalArray.hundreds = "";
-          strNum = strNum.slice(1);
-          break;
-        case "1":
-          finalArray.hundreds = "C";
-          strNum = strNum.slice(1);
-          break;
-        case "2":
-          finalArray.hundreds = "CC";
-          strNum = strNum.slice(1);
-          break;
-        case "3":
-          finalArray.hundreds = "CCC";
-          strNum = strNum.slice(1);
-          break;
-        case "4":
-          finalArray.hundreds = "CD";
-          strNum = strNum.slice(1);
-          break;
-        case "5":
-          finalArray.hundreds = "D";
-          strNum = strNum.slice(1);
-          break;
-        case "6":
-          finalArray.hundreds = "DC";
-          strNum = strNum.slice(1);
-          break;
-        case "7":
-          finalArray.hundreds = "DCC";
-          strNum = strNum.slice(1);
-          break;
-        case "8":
-          finalArray.hundreds = "DCCC";
-          strNum = strNum.slice(1);
-          break;
-        case "9":
-          finalArray.hundreds = "CM";
-          strNum = strNum.slice(1);
-          break;
-      }
-    }
-  })();
-
-  // Two digit handling
-  (() => {
-    if (strNum.length == 2) {
-      switch (strNum[0]) {
-        case "0":
-          finalArray.tens = "";
-          strNum = strNum.slice(1);
-          break;
-        case "1":
-          finalArray.tens = "X";
-          strNum = strNum.slice(1);
-          break;
-        case "2":
-          finalArray.tens = "XX";
-          strNum = strNum.slice(1);
-          break;
-        case "3":
-          finalArray.tens = "XXX";
-          strNum = strNum.slice(1);
-          break;
-        case "4":
-          finalArray.tens = "XL";
-          strNum = strNum.slice(1);
-          break;
-        case "5":
-          finalArray.tens = "L";
-          strNum = strNum.slice(1);
-          break;
-        case "6":
-          finalArray.tens = "LX";
-          strNum = strNum.slice(1);
-          break;
-        case "7":
-          finalArray.tens = "LXX";
-          strNum = strNum.slice(1);
-          break;
-        case "8":
-          finalArray.tens = "LXXX";
-          strNum = strNum.slice(1);
-          break;
-        case "9":
-          finalArray.tens = "XC";
-          strNum = strNum.slice(1);
-          break;
-      }
-    }
-  })();
-
-  // One digit handling
-  (() => {
-    if (strNum.length == 1) {
-      switch (strNum[0]) {
-        case "0":
-          finalArray.ones = "";
-          strNum = strNum.slice(1);
-          break;
-        case "1":
-          finalArray.ones = "I";
-          strNum = strNum.slice(1);
-          break;
-        case "2":
-          finalArray.ones = "II";
-          strNum = strNum.slice(1);
-          break;
-        case "3":
-          finalArray.ones = "III";
-          strNum = strNum.slice(1);
-          break;
-        case "4":
-          finalArray.ones = "IV";
-          strNum = strNum.slice(1);
-          break;
-        case "5":
-          finalArray.ones = "V";
-          strNum = strNum.slice(1);
-          break;
-        case "6":
-          finalArray.ones = "VI";
-          strNum = strNum.slice(1);
-          break;
-        case "7":
-          finalArray.ones = "VII";
-          strNum = strNum.slice(1);
-          break;
-        case "8":
-          finalArray.ones = "VIII";
-          strNum = strNum.slice(1);
-          break;
-        case "9":
-          finalArray.ones = "IX";
-          strNum = strNum.slice(1);
-          break;
-      }
-    }
-  })();
-
-  // combining all key values and returning final string:
-//   return Object.values(finalArray).join("");
-  let result = Object.values(finalArray).join("");
-  outputTwo.style.fontSize = "30px";
-  // output.style.marginBottom = "-0px";
-  outputTwo.style.paddingTop = "1px";
-
-  document.getElementById("output").innerHTML = num + " converted to Roman numeral is:";
-  document.getElementById("outputTwo").innerHTML = result.bold();
-
-}
     </script>
-    
-</body>
+  </body>
 </html>

@@ -1,11 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 body {
-    font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
+  /* max-width: 1200px;   */
+  margin: auto;
+  width: 50%;
+  background-color: hsl(60, 100%, 80%);
 }
 
 header {
   text-align: center;
-  color: #00008B;
+  color: #00008b;
   padding: 20px 0px 5px 0px;
 }
 
@@ -19,11 +23,11 @@ main {
 }
 
 figure {
-    border-style: solid;
-    border-color: #00008B;
-    border-width: 5px;
-    text-align: center;
-   background-color: hsl(60, 60%, 90%);
+  border-style: solid;
+  border-color: #00008b;
+  border-width: 5px;
+  text-align: center;
+  background-color: hsl(60, 60%, 90%);
 }
 
 img {
@@ -31,7 +35,7 @@ img {
   display: block;
   height: auto;
   margin: 0 auto;
-  padding: 50px;
+  /* padding: 50px; */
 }
 
 #img-caption {
@@ -45,9 +49,9 @@ ul {
   max-width: 800px;
   line-height: 1.6;
   text-align: left;
-/*   margin: 0 auto 0 auto; */
-      display: block;
-    padding: 10px 100px;
+  /*   margin: 0 auto 0 auto; */
+  display: block;
+  padding: 10px 100px;
 }
 
 /* li {
