@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X0LW9B41GN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-X0LW9B41GN");
+    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Palindrome checker</title>
-    <link rel="icon" type="image/png" href="../img/logo.PNG"/>
-
+    <link rel="icon" type="image/png" href="../img/logo.PNG" />
   </head>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter&display=swap");
@@ -51,8 +61,8 @@
       justify-content: center;
       background-color: hsl(284, 33%, 80%);
       border-radius: 5%;
-      padding: clamp(60px, 5%, 120px) clamp(60px, 5%, 120px)
-        clamp(60px, 5%, 120px) clamp(60px, 5%, 120px);
+      padding: clamp(60px, 5%, 120px) clamp(60px, 5%, 120px) clamp(60px, 5%, 120px)
+        clamp(60px, 5%, 120px);
       margin-top: 15vh;
       font-size: 16px;
       width: 70%;
@@ -102,27 +112,18 @@
     <div class="all">
       <h1>Palindrome checker</h1>
       <p class="explanation">
-        A palindrome is a word or sentence that's spelled the same way both
-        forward and backward, ignoring punctuation, case, and spacing. This app
-        checks whether a word is a palindrome or not.
+        A palindrome is a word or sentence that's spelled the same way both forward and backward,
+        ignoring punctuation, case, and spacing. This app checks whether a word is a palindrome or
+        not.
       </p>
 
       <br />
-      <p>
-        <strong>example:</strong> the word "race car" is a palindrome <br />
-      </p>
+      <p><strong>example:</strong> the word "race car" is a palindrome <br /></p>
       <div class="func">
         <h2>Input the word to check:</h2>
         <div class="input-field">
-          <input
-            type="text"
-            placeholder="Enter text to check"
-            name="a"
-            id="a"
-          />
-          <button onclick="palindrome(document.getElementById('a').value)">
-            Enter
-          </button>
+          <input type="text" placeholder="Enter text to check" name="a" id="a" />
+          <button onclick="palindrome(document.getElementById('a').value)">Enter</button>
         </div>
       </div>
 
@@ -154,11 +155,9 @@
     let bStr = backwards.join("");
 
     if (fStr === bStr) {
-      document.getElementById("output").innerHTML =
-        " &#9989; this is a palindrome";
+      document.getElementById("output").innerHTML = " &#9989; this is a palindrome";
     } else {
-      document.getElementById("output").innerHTML =
-        " &#10060; this is not a palindrome";
+      document.getElementById("output").innerHTML = " &#10060; this is not a palindrome";
     }
 
     outputTwo.style.fontSize = "30px";

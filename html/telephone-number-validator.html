@@ -1,140 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../img/logo.PNG"/>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X0LW9B41GN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-X0LW9B41GN");
+    </script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../img/logo.PNG" />
 
     <title>Telephone Number Validator</title>
-</head>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter&display=swap');
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Inter', sans-serif;
-    color: rgb(75, 75, 75);
-    background-color:rgb(230, 230, 230);
-}
-  h1 {
-    font-family: 'DM Serif Display', serif;
-    color: black;
-    margin-bottom: 5%;
-    font-size: 40px;
-    text-align: center;
-  }
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter&display=swap");
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: "Inter", sans-serif;
+      color: rgb(75, 75, 75);
+      background-color: rgb(230, 230, 230);
+    }
+    h1 {
+      font-family: "DM Serif Display", serif;
+      color: black;
+      margin-bottom: 5%;
+      font-size: 40px;
+      text-align: center;
+    }
 
-  h2 {
-    padding-top: 3%;
-    padding-bottom: 3%;
-    font-size: 22px;
-  }
+    h2 {
+      padding-top: 3%;
+      padding-bottom: 3%;
+      font-size: 22px;
+    }
 
-  input {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    width: 60%;
-    padding: 14px 20px;
-    border: none;
-    border-radius: 10px;
-  }
+    input {
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      width: 60%;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 10px;
+    }
 
-  .all {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: hsl(284, 33%, 80%);
-    border-radius: 5%;
-    padding: clamp(60px, 5%, 120px) clamp(60px, 5%, 120px) clamp(60px, 5%, 120px) clamp(60px, 5%, 120px);
-    margin-top: 15vh;
-    font-size: 16px;
-    width: 70%;
-    max-width: 600px;
-  }
+    .all {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: hsl(284, 33%, 80%);
+      border-radius: 5%;
+      padding: clamp(60px, 5%, 120px) clamp(60px, 5%, 120px) clamp(60px, 5%, 120px)
+        clamp(60px, 5%, 120px);
+      margin-top: 15vh;
+      font-size: 16px;
+      width: 70%;
+      max-width: 600px;
+    }
 
-  .func {
-    text-align: center;
-    width: 100%;
-  }
+    .func {
+      text-align: center;
+      width: 100%;
+    }
 
-  .input-field {
-    display: flex;
-    flex-direction: row;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin: auto;
-  }
+    .input-field {
+      display: flex;
+      flex-direction: row;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: auto;
+    }
 
-  button {
-    background-color: hwb(271 7% 41%);
-    color: white;
-    border-radius: 10px;
-    padding: 12px 24px 12px 24px;
-    font-size: 16px;
-    border: none;
-    font-weight: bold;
-  }
+    button {
+      background-color: hwb(271 7% 41%);
+      color: white;
+      border-radius: 10px;
+      padding: 12px 24px 12px 24px;
+      font-size: 16px;
+      border: none;
+      font-weight: bold;
+    }
 
-  button:hover {
-    background-color: hwb(271 5% 63%);
-  }
+    button:hover {
+      background-color: hwb(271 5% 63%);
+    }
 
-  #output {
-    margin-top: 50px;
-  }
+    #output {
+      margin-top: 50px;
+    }
 
-  .explanation {
+    .explanation {
       width: 100%;
       max-width: 800px;
       text-align: center;
-  }
-</style>
+    }
+  </style>
 
-<body>
+  <body>
     <div class="all">
       <h1>Telephone Number Validator</h1>
-      <p class="explanation">Input a set of characters below to check whether it is a valid US/Canadian phone number</p>
-      <br>
-      <div class="func">    
+      <p class="explanation">
+        Input a set of characters below to check whether it is a valid US/Canadian phone number
+      </p>
+      <br />
+      <div class="func">
         <h2>Telephone number input:</h2>
         <div class="input-field">
-          <input type="text" placeholder="Enter text to encode/decode" name="a" id="a">
+          <input type="text" placeholder="Enter text to encode/decode" name="a" id="a" />
           <button onclick="telephoneCheck(document.getElementById('a').value)">Enter</button>
         </div>
-  
       </div>
 
-
-      <p id="output"> </p>
-      <p id="outputTwo"> </p>
+      <p id="output"></p>
+      <p id="outputTwo"></p>
     </div>
-</body>
+  </body>
 </html>
-    <script>
+<script>
+  function telephoneCheck(str) {
+    // hopefully this never needs to be troubleshooted :(
+    let regex =
+      /^(\d{10})$|^(\d{3}-\d{3}-\d{4})$|^(\d\s\d{3}-\d{3}-\d{4})$|^(1\s\(\d{3}\)-\d{3}-\d{4})$|^(1\s\(\d{3}\)\s\d{3}-\d{4})$|^(\(\d{3}\)\d{3}-\d{4})$|^(1\(\d{3}\)\d{3}-\d{4})$|^(\d\s\d{3}\s\d{3}\s\d{4})$|^(\+1\s\d{3}\s\d{3}\s\d{4})$|^(\+1-\d{3}-\d{3}-\d{4})$/g;
 
-function telephoneCheck(str) {
-  // hopefully this never needs to be troubleshooted :(
-  let regex = /^(\d{10})$|^(\d{3}-\d{3}-\d{4})$|^(\d\s\d{3}-\d{3}-\d{4})$|^(1\s\(\d{3}\)-\d{3}-\d{4})$|^(1\s\(\d{3}\)\s\d{3}-\d{4})$|^(\(\d{3}\)\d{3}-\d{4})$|^(1\(\d{3}\)\d{3}-\d{4})$|^(\d\s\d{3}\s\d{3}\s\d{4})$|^(\+1\s\d{3}\s\d{3}\s\d{4})$|^(\+1-\d{3}-\d{3}-\d{4})$/g;
+    if (regex.test(str)) {
+      document.getElementById("output").innerHTML = " &#9989; valid phone number";
+      // document.getElementById("outputTwo").innerHTML = result.bold();
+    } else {
+      document.getElementById("output").innerHTML = " &#10060; invalid phone number";
+      // document.getElementById("outputTwo").innerHTML = result.bold();
+    }
 
-  if (regex.test(str)) {
-    document.getElementById("output").innerHTML = " &#9989; valid phone number";
-    // document.getElementById("outputTwo").innerHTML = result.bold();
-  } else {
-    document.getElementById("output").innerHTML = " &#10060; invalid phone number";
-    // document.getElementById("outputTwo").innerHTML = result.bold();
+    let result = regex.test(str);
+    outputTwo.style.fontSize = "30px";
+    // output.style.marginBottom = "-0px";
+    outputTwo.style.paddingTop = "1px";
   }
-
-  let result = regex.test(str);
-  outputTwo.style.fontSize = "30px";
-  // output.style.marginBottom = "-0px";
-  outputTwo.style.paddingTop = "1px";
-}
-
-
-
 </script>

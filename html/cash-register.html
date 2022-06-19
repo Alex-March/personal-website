@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X0LW9B41GN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-X0LW9B41GN");
+    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +22,7 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <link rel="icon" type="image/png" href="../img/logo.PNG"/>
+    <link rel="icon" type="image/png" href="../img/logo.PNG" />
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -60,8 +71,8 @@
       justify-content: center;
       background-color: hsl(284, 33%, 80%);
       border-radius: 5%;
-      padding: clamp(60px, 5%, 120px) clamp(60px, 5%, 120px)
-        clamp(30px, 3%, 100px) clamp(60px, 5%, 120px);
+      padding: clamp(60px, 5%, 120px) clamp(60px, 5%, 120px) clamp(30px, 3%, 100px)
+        clamp(60px, 5%, 120px);
       margin-top: 15vh;
       margin-bottom: 10vh;
       font-size: 16px;
@@ -116,9 +127,9 @@
     <div class="all">
       <h1>Cash Register</h1>
       <p class="explanation">
-        This is a cash register drawer calculator, where you input the price of
-        an item and the amount of cash that is given by the customer, and this
-        page calculates how much change to give in change in what denomination.
+        This is a cash register drawer calculator, where you input the price of an item and the
+        amount of cash that is given by the customer, and this page calculates how much change to
+        give in change in what denomination.
       </p>
       <br />
       <div class="func">
@@ -128,15 +139,11 @@
             <div class="col-md-1">
               <label for="price" class="col-form-label-lg">Price:</label>
             </div>
-            <div class="col-md-5">
-              <input type="text" id="price" name="price" /><br />
-            </div>
+            <div class="col-md-5"><input type="text" id="price" name="price" /><br /></div>
             <div class="col-md-1">
               <label for="cash" class="col-form-label-lg">Cash:</label>
             </div>
-            <div class="col-md-5">
-              <input type="text" id="cash" name="cash" /><br />
-            </div>
+            <div class="col-md-5"><input type="text" id="cash" name="cash" /><br /></div>
             <h2>Cash in drawer:</h2>
             <div class="container">
               <div class="row">
@@ -193,9 +200,7 @@
                   <input type="text" placeholder="" id="twenty" />
                 </div>
                 <div class="col-md-1">
-                  <label for="one-hundred" class="col-form-label"
-                    >Hundred:</label
-                  >
+                  <label for="one-hundred" class="col-form-label">Hundred:</label>
                 </div>
                 <div class="col-md-3">
                   <input type="text" placeholder="" id="one-hundred" />
@@ -218,9 +223,7 @@
 
 <script>
   function checkCashRegister() {
-
-    document.getElementById("result-section").innerHTML = ""
-
+    document.getElementById("result-section").innerHTML = "";
 
     const price = document.getElementById("price").value;
     const cash = document.getElementById("cash").value;
@@ -242,10 +245,7 @@
     const fiveArray = ["FIVE", fiveAmount === "" ? 0 : fiveAmount];
     const tenArray = ["TEN", tenAmount === "" ? 0 : tenAmount];
     const twentyArray = ["TWENTY", twentyAmount === "" ? 0 : twentyAmount];
-    const oneHundredArray = [
-      "ONE HUNDRED",
-      oneHundredAmount === "" ? 0 : oneHundredAmount,
-    ];
+    const oneHundredArray = ["ONE HUNDRED", oneHundredAmount === "" ? 0 : oneHundredAmount];
 
     const cid = [
       pennyArray,
@@ -287,8 +287,7 @@
 
     // sum up all eligible change that can be given
     let inputOne = newCid.reduce((a, b) => a + b[1], 0);
-    let sumOfAllChange =
-      Math.round(newCid.reduce((a, b) => a + b[1], 0) * 100) / 100;
+    let sumOfAllChange = Math.round(newCid.reduce((a, b) => a + b[1], 0) * 100) / 100;
 
     // Return {status: "CLOSED", change: [...]} with cash-in-drawer as the value for the key change if it is equal to the change due.
     if (changeNeeded === sumOfAllChange) {
@@ -299,9 +298,7 @@
         "cash register status: <strong>" + cashRegister.status + "</strong>";
 
       document.getElementById("result-section").innerHTML +=
-        "<br>" +
-        "No more cash in till after this customer the change" +
-        "<br><br>";
+        "<br>" + "No more cash in till after this customer the change" + "<br><br>";
     }
 
     //  Return {status: "INSUFFICIENT_FUNDS", change: []} if cash-in-drawer is less than the change due, or if you cannot return the exact change.
@@ -312,9 +309,7 @@
       document.getElementById("output").innerHTML =
         "cash register status: <strong>" + cashRegister.status + "</strong>"; //.stringify(cashRegister, null, 2);
       document.getElementById("result-section").innerHTML +=
-        "<br>" +
-        "Not enough cash in till to give change to the customer" +
-        "<br><br>";
+        "<br>" + "Not enough cash in till to give change to the customer" + "<br><br>";
     }
 
     // Otherwise, return {status: "OPEN", change: [...]}, with the change due in coins and bills, sorted in highest to lowest order, as the value of the change key.
@@ -323,26 +318,18 @@
       let subCid = newCid.map((a) => a[1]);
       for (let i = subCid.length - 1; i >= 0; i--) {
         changeNeeded = Math.round(changeNeeded * 100) / 100;
-        if (
-          changeNeeded > subCid[i] &&
-          denominations[i]["value"] < changeNeeded
-        ) {
+        if (changeNeeded > subCid[i] && denominations[i]["value"] < changeNeeded) {
           changeNeeded = changeNeeded - subCid[i]; //( % denominations[i]['value'])
           cashRegister.change.push([newCid[i][0], Number(subCid[i])]);
         } else if (changeNeeded > denominations[i]["value"] && subCid[i] > 0) {
           let amountNotMax =
-            Math.floor(changeNeeded / denominations[i]["value"]) *
-            denominations[i]["value"];
+            Math.floor(changeNeeded / denominations[i]["value"]) * denominations[i]["value"];
           cashRegister.change.push([newCid[i][0], amountNotMax]);
           changeNeeded = changeNeeded - amountNotMax;
         }
       }
       document.getElementById("result-section").innerHTML =
-        "<br>" +
-        "Cash register status: " +
-        "<strong>" +
-        cashRegister.status +
-        "</strong>";
+        "<br>" + "Cash register status: " + "<strong>" + cashRegister.status + "</strong>";
 
       document.getElementById("result-section").innerHTML +=
         "<br>" + "Change to be given to the customer (bill + $ amount):" + "<br><br>";

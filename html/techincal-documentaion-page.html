@@ -1,112 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="../css/techincal-documentaion-page.css">
-    
-    <link rel="icon" type="image/png" href="../img/logo.PNG"/>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X0LW9B41GN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-X0LW9B41GN");
+    </script>
+    <link rel="stylesheet" href="../css/techincal-documentaion-page.css" />
+
+    <link rel="icon" type="image/png" href="../img/logo.PNG" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Technical Documentation Page</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav id="navbar">
-        <header id="left">
-          Very brief Python documentation
-        </header>
+      <header id="left">Very brief Python documentation</header>
+      <ul>
+        <li><a class="nav-link" href="#First_steps">First steps</a></li>
+        <li><a class="nav-link" href="#Variables_and_Types">Variables and Types</a></li>
+        <li><a class="nav-link" href="#Lists">Lists</a></li>
+        <li><a class="nav-link" href="#Basic_Operators">Basic Operators</a></li>
+        <li><a class="nav-link" href="#Loops">Loops</a></li>
+      </ul>
+    </nav>
+    <br />
+    <br />
+    <br />
+    <main id="main-doc">
+      <section class="main-section" id="First_steps">
+        <header id="right">First steps</header>
+        <p>
+          To get started, we are going to write a simple line of code in Python. The code will
+          display the words "Hello World!". You can do so by writing the following code:
+        </p>
+        <code>print("Hello World!")</code>
+
+        <p>Congrats! You are on your way to Python mastery!</p>
+      </section>
+      <section class="main-section" id="Variables_and_Types">
+        <header id="right">Variables and Types</header>
+        <p>Python has five standard data types::</p>
         <ul>
-          <li><a class="nav-link" href="#First_steps">First steps</a></li>
-          <li><a class="nav-link" href="#Variables_and_Types">Variables and Types</a></li>
-          <li><a class="nav-link" href="#Lists">Lists</a></li>
-          <li><a class="nav-link" href="#Basic_Operators">Basic Operators</a></li>
-          <li><a class="nav-link" href="#Loops">Loops</a></li>
+          <li>Numbers</li>
+          <li>String</li>
+          <li>List</li>
+          <li>Tuple</li>
+          <li>Dictionary</li>
         </ul>
-      </nav>
-      <br>
-      <br>
-      <br>
-      <main id="main-doc">
-        <section class="main-section" id="First_steps">
-          <header id="right">First steps</header>
-          <p>To get started, we are going to write a simple line of code in Python. The code will display the words "Hello World!". You can do so by writing the following code:</p>
-              <code>print("Hello World!")</code>
-      
-          <p>Congrats! You are on your way to Python mastery!</p>
-      
-        </section>
-        <section class="main-section" id="Variables_and_Types">
-          <header id="right">Variables and Types</header>
-          <p>Python has five standard data types::</p>
-          <ul>
-            <li>Numbers</li>
-            <li>String</li>
-            <li>List</li>
-            <li>Tuple</li>
-            <li>Dictionary</li>
-          </ul>
-          <p>We will briefly go over the numbers and strings below.</p>
-          <h2>Numbers</h2>
-          <p>The number data types store numberic values, and are created when a value is assigned to them. There are four numerical types in Python:</p>
-          <ul>
-            <li>int (signed integers)</li>
-            <li>long (long integers, they can also be represented in octal and hexadecimal)</li>
-            <li>float (floating point real values)</li>
-            <li>complex (complex numbers)</li>
-          </ul>
-          <p>Here is a simple example of how to assign a number value(int) to a variable:</p>
-          <code>x = 5</code>
-          <h2>Strings</h2>
-          <p>Strings are a set of characters that are enclosed in either single or double quotation marks. 
-          </p>
-          <p>Here is a simple example of how to assign a string value to a variable:</p>
-          <code>x = 'this is a string'</code>
-       </section>
-        <section class="main-section" id="Lists">
-          <header id="right">Lists</header>
-          <p>A list contains items seperated by commas and enclosed with square brackets []. Items in a list may be different data types. As an example, you can have numbers and strings in a list:</p>
-          <code>x = [ 'hello', 123 ]</code>
-        </section>
-        
-        <section class="main-section" id="Basic_Operators">
-          <header id="right">Basic Operators</header>
-          <p>Operators are used to perform operations on values and variables. There are many kinds of operators, and in this documentation, we will be touching on arithmetic operators.</p>
-          <p>Arithmetic operators are used for mathmatical operations, such as addition and multiplication. They include the following:</p>
-           <ul>
-            <li>Addition</li>
-            <li>Subtraction</li>
-            <li>Multiplication</li>
-            <li>Division</li>
-            <li>Modulus</li>
-            <li>Exponentiation</li>
-            <li>Floor division</li>
-          </ul>
-          <p>Here is an example of addition:</p>
-          <code>5 + 6</code>
-          <p>Here is an example of floor division:</p>
-          <code>21 // 4</code>
-        </section>
-        <section class="main-section" id="Loops">
-          <header id="right">Loops</header>
-          <p>There are loop types in Python, "for" loops and "while" loops. </p>
-          <h2>"For" loops</h2>
-          <p>For loops iterate over a sequence</p>
-          <p>Here is an example of a for loop:</p>
-          <code>abc_list = [ 'a', 'b', 'c' ]</code>
-          <code>for i in abc_list: <br>
-          &emsp; print(i)</code>
-          <h2>"While" loops</h2>
-          <p>While loops repeat as long as a condition is met</p>
-          <p>Here is an example of a while loop:</p>
-          <code>i = 1 &emsp;
-            while i < 4: <br>
-            &emsp; print(i) <br>
-            &emsp; i +=1
-           print(i)</code>
-        </section>
-        <br>
-        <p id="end">Thank you for making it through to the end of the documentation! Hopefully you learned something useful!</p>
-      </main>
-      
-      
-</body>
+        <p>We will briefly go over the numbers and strings below.</p>
+        <h2>Numbers</h2>
+        <p>
+          The number data types store numberic values, and are created when a value is assigned to
+          them. There are four numerical types in Python:
+        </p>
+        <ul>
+          <li>int (signed integers)</li>
+          <li>long (long integers, they can also be represented in octal and hexadecimal)</li>
+          <li>float (floating point real values)</li>
+          <li>complex (complex numbers)</li>
+        </ul>
+        <p>Here is a simple example of how to assign a number value(int) to a variable:</p>
+        <code>x = 5</code>
+        <h2>Strings</h2>
+        <p>
+          Strings are a set of characters that are enclosed in either single or double quotation
+          marks.
+        </p>
+        <p>Here is a simple example of how to assign a string value to a variable:</p>
+        <code>x = 'this is a string'</code>
+      </section>
+      <section class="main-section" id="Lists">
+        <header id="right">Lists</header>
+        <p>
+          A list contains items seperated by commas and enclosed with square brackets []. Items in a
+          list may be different data types. As an example, you can have numbers and strings in a
+          list:
+        </p>
+        <code>x = [ 'hello', 123 ]</code>
+      </section>
+
+      <section class="main-section" id="Basic_Operators">
+        <header id="right">Basic Operators</header>
+        <p>
+          Operators are used to perform operations on values and variables. There are many kinds of
+          operators, and in this documentation, we will be touching on arithmetic operators.
+        </p>
+        <p>
+          Arithmetic operators are used for mathmatical operations, such as addition and
+          multiplication. They include the following:
+        </p>
+        <ul>
+          <li>Addition</li>
+          <li>Subtraction</li>
+          <li>Multiplication</li>
+          <li>Division</li>
+          <li>Modulus</li>
+          <li>Exponentiation</li>
+          <li>Floor division</li>
+        </ul>
+        <p>Here is an example of addition:</p>
+        <code>5 + 6</code>
+        <p>Here is an example of floor division:</p>
+        <code>21 // 4</code>
+      </section>
+      <section class="main-section" id="Loops">
+        <header id="right">Loops</header>
+        <p>There are loop types in Python, "for" loops and "while" loops.</p>
+        <h2>"For" loops</h2>
+        <p>For loops iterate over a sequence</p>
+        <p>Here is an example of a for loop:</p>
+        <code>abc_list = [ 'a', 'b', 'c' ]</code>
+        <code
+          >for i in abc_list: <br />
+          &emsp; print(i)</code
+        >
+        <h2>"While" loops</h2>
+        <p>While loops repeat as long as a condition is met</p>
+        <p>Here is an example of a while loop:</p>
+        <code
+          >i = 1 &emsp; while i < 4: <br />
+          &emsp; print(i) <br />
+          &emsp; i +=1 print(i)</code
+        >
+      </section>
+      <br />
+      <p id="end">
+        Thank you for making it through to the end of the documentation! Hopefully you learned
+        something useful!
+      </p>
+    </main>
+  </body>
 </html>
