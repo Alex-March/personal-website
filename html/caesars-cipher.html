@@ -44,15 +44,10 @@
     input {
       font-family: "Inter", sans-serif;
       font-size: 16px;
-
       width: 60%;
-      /* background-color: #4CAF50; */
-      /* color: white; */
       padding: 14px 20px;
-      /* margin: 8px 0; */
       border: none;
       border-radius: 10px;
-      /* cursor: pointer; */
     }
 
     .all {
@@ -126,7 +121,6 @@
   </body>
 </html>
 <script>
-  // const num = document.getElementsByTagName("input");
   function rot13(str) {
     const strUpper = str.toUpperCase();
     console.log("string value: ", str);
@@ -147,10 +141,8 @@
       }
     }
     // convert array to string
-
     let result = newArr.join("");
     outputTwo.style.fontSize = "30px";
-    // output.style.marginBottom = "-0px";
     outputTwo.style.paddingTop = "1px";
 
     document.getElementById("output").innerHTML = strUpper + " encoded/decoded to ROT13 is:";
