@@ -1,5 +1,5 @@
 # ignore zip file used for upload
-index.zip
+.zip
 
 # ignore js folder as I integrated the js code into the html files
 js
